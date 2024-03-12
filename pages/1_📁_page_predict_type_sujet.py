@@ -4,21 +4,27 @@ import json
 import os
 
 
+
 '''
 # JurisAI
 '''
 
-st.set_page_config(
-    page_title="Search similar documents",
-    page_icon="📁",
-)
+# st.set_page_config(
+#     page_title="Search similar documents",
+#     page_icon="📁",
+# )
+# text=st.text_input("Text to be analysed","Décret")
 
 st.markdown('''
 You can classify Moroccan legal documents that you have right here !
 ''')
 
+fichier = open(os.path.join(os.getcwd(),'document_test','TypeArreteSujetSanteFrench0.txt'), "r")
 
-text=st.text_input("Text to be analysed","Décret")
+text=fichier.read()
+st.markdown(text)
+
+fichier.close()
 
 data = json.dumps(text).encode('utf-8')
 
