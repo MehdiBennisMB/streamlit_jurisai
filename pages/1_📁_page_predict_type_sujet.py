@@ -8,6 +8,11 @@ import os
 # JurisAI
 '''
 
+st.set_page_config(
+    page_title="Search similar documents",
+    page_icon="📁",
+)
+
 st.markdown('''
 You can classify Moroccan legal documents that you have right here !
 ''')
