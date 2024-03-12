@@ -53,6 +53,12 @@ if st.button('Search similar documents'):
 
     # display the results stored into a dataframe as a table in streamlit
     # simply add '[...]' at the beginning and end of the text
-    df_to_display = pd.DataFrame(API_RETURN)
-    df_to_display['text'] = '[...]' + df_to_display['text'].astype(str) + '[...]'
-    st.table(df_to_display)
+    # df_to_display = pd.DataFrame(API_RETURN)
+    # df_to_display['text'] = '[...]' + df_to_display['text'].astype(str) + '[...]'
+    # st.table(df_to_display)
+
+    # display the results as one main line and another sub-line containing text
+    for documents in API_RETURN:
+        header_to_display = documents['Sujet'] + ' ----- ' + documents['Titre']
+        st.header(header_to_display)
+        st.text('[...]' + documents['text'] + '[...]')
