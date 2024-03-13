@@ -26,7 +26,7 @@ if uploaded_file is not None:
 
     # uploaded_file.read()
     text = stringio.read()
-    display_text=text[0:MAX_CHAR]
+    display_text=text
 
     data = json.dumps(text).encode('utf-8')
     url = "https://jurisaiimage-l6sefij74q-ew.a.run.app/predict"
@@ -38,7 +38,7 @@ if uploaded_file is not None:
     st.header(f'Type: {type}')
     st.header(f'{subject}')
 
-    hauteur_affichage = 400  # en pixels
+    hauteur_affichage = 400  # nb of pixels
     st.markdown(f"""
         <div style="border: 2px solid #d3d3d3; border-radius: 5px; padding: 10px; font-size: 25px;
                     height: {hauteur_affichage}px; overflow-y: scroll; background-color: #f9f9f9;">

@@ -51,14 +51,18 @@ if st.button('Look for similar documents'):
     # use variable text, option, and options to retrieve the relevant parameter values
     pass
 
-    # display the results stored into a dataframe as a table in streamlit
-    # simply add '[...]' at the beginning and end of the text
-    # df_to_display = pd.DataFrame(API_RETURN)
-    # df_to_display['text'] = '[...]' + df_to_display['text'].astype(str) + '[...]'
-    # st.table(df_to_display)
-
-    # display the results as one main line and another sub-line containing text
+    # display the results as 2 main lines and a rectangle containing text
     for documents in API_RETURN:
-        header_to_display = documents['Sujet'] + ' ----- ' + documents['Titre']
-        st.header(header_to_display)
-        st.write('[...]' + documents['text'] + '[...]')
+        type = documents['Type']
+        subject = documents['Sujet']
+        display_text = documents['text']
+        st.header(f'Type: {type}')
+        st.header(f'{subject}')
+
+        hauteur_affichage = 400  # nb of pixels
+        st.markdown(f"""
+            <div style="border: 2px solid #d3d3d3; border-radius: 5px; padding: 10px; font-size: 25px;
+                        height: {hauteur_affichage}px; overflow-y: scroll; background-color: #f9f9f9;">
+                {display_text}
+            </div>
+        """, unsafe_allow_html=True)
