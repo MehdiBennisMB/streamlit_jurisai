@@ -61,4 +61,4 @@ if st.button('Search similar documents'):
     for documents in API_RETURN:
         header_to_display = documents['Sujet'] + ' ----- ' + documents['Titre']
         st.header(header_to_display)
-        st.text('[...]' + documents['text'] + '[...]')
+        st.write('[...]' + documents['text'] + '[...]')
