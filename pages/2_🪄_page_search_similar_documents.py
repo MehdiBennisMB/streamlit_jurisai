@@ -46,7 +46,7 @@ else :
     #nothing to be done
     pass
 
-if st.button('Search similar documents'):
+if st.button('Look for similar documents'):
     # code here for the API returning a dataframe with similar documents
     # use variable text, option, and options to retrieve the relevant parameter values
     pass
