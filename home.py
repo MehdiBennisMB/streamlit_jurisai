@@ -14,4 +14,5 @@ st.set_page_config(
 
 st.markdown('''
 You can classify Moroccan legal documents that you have right here !
+Choose either of the functions on the left hand side of this page
 ''')
