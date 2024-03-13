@@ -5,7 +5,7 @@ import os
 from io import StringIO
 
 '''
-# JurisAI
+# JurisAI - Smart Classifier
 '''
 
 # st.set_page_config(
