@@ -34,14 +34,16 @@ if uploaded_file is not None:
     prediction=response.json()
     type = prediction['type']
     subject = prediction['subject']
+
     st.header(f'Type: {type}')
     st.header(f'{subject}')
 
     hauteur_affichage = 400  # en pixels
     st.markdown(f"""
-    <div style="border: 2px solid #d3d3d3; padding: 10px; font-size: 25px; height: {hauteur_affichage}px; overflow-y: scroll;">
-        {display_text}
-    </div>
+        <div style="border: 2px solid #d3d3d3; border-radius: 5px; padding: 10px; font-size: 25px;
+                    height: {hauteur_affichage}px; overflow-y: scroll; background-color: #f9f9f9;">
+            {display_text}
+        </div>
     """, unsafe_allow_html=True)
 # fichier = open(os.path.join(os.getcwd(),'document_test',filename), "r")
 # text=fichier.read()
