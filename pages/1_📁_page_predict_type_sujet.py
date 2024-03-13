@@ -28,6 +28,7 @@ if uploaded_file is not None:
     st.write("You selected the file:", uploaded_file.name)
     # uploaded_file.read()
     text = stringio.read()
+    st.markdown(text)
     data = json.dumps(text).encode('utf-8')
     url = "https://jurisaiimage-l6sefij74q-ew.a.run.app/predict"
     response = requests.post(url, data=data, headers={ 'Content-Type': 'text/plain' })
@@ -35,7 +36,7 @@ if uploaded_file is not None:
     type = prediction['type']
     subject = prediction['subject']
 
-    st.header(f'Type:{type}')
+    st.header(f'Type: {type}')
     st.header(f'{subject}')
 
 
