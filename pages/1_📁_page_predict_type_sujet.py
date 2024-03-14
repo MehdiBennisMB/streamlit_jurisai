@@ -31,6 +31,7 @@ if uploaded_file is not None:
     data = json.dumps(text).encode('utf-8')
     url = "https://jurisaiimage-l6sefij74q-ew.a.run.app/predict"
     response = requests.post(url, data=data, headers={ 'Content-Type': 'text/plain' })
+    print(response)
     prediction=response.json()
     type = prediction['type']
     subject = prediction['subject']
