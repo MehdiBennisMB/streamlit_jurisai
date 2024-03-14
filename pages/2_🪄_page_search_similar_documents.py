@@ -33,8 +33,6 @@ url = "https://jurisaiimage-l6sefij74q-ew.a.run.app/semantic"
 
 params={"question":text,"source":source}
 
-
-
 if option == 'Documents classifiés':
     options = st.multiselect(
         'Type de documents classifiés',
@@ -57,8 +55,7 @@ if st.button('Look for similar documents'):
             type = documents['Document']
             subject = documents['Catégorie']
             display_text = documents['text']
-            st.header(f'Document: {type}')
-            st.header(f'{subject}')
+            st.header(f'Document: {type}  |  Topic: {subject}')
 
             hauteur_affichage = 400  # nb of pixels
             st.markdown(f"""
@@ -72,9 +69,10 @@ if st.button('Look for similar documents'):
         for documents in API_RETURN:
             type = documents['Type']
             subject = documents['Sujet']
+            date=documents['Date Greg']
+            doc_number=documents['Numero']
             display_text = documents['text']
-            st.header(f'Type: {type}')
-            st.header(f'{subject}')
+            st.header(f'Type: {type}  |  {subject}  |  {date}  |  {doc_number}')
 
             hauteur_affichage = 400  # nb of pixels
             st.markdown(f"""
