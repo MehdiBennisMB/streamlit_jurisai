@@ -5,7 +5,7 @@ import os
 from io import StringIO
 
 '''
-# JurisAI - Smart Classifier
+# JurisAI
 '''
 
 # st.set_page_config(
@@ -31,13 +31,12 @@ if uploaded_file is not None:
     data = json.dumps(text).encode('utf-8')
     url = "https://jurisaiimage-l6sefij74q-ew.a.run.app/predict"
     response = requests.post(url, data=data, headers={ 'Content-Type': 'text/plain' })
-    print(response)
     prediction=response.json()
     type = prediction['type']
     subject = prediction['subject']
 
     st.header(f'Type: {type}')
-    st.header(f'Topic: {subject}')
+    st.header(f'{subject}')
 
     hauteur_affichage = 400  # nb of pixels
     st.markdown(f"""
