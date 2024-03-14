@@ -37,7 +37,7 @@ if uploaded_file is not None:
     subject = prediction['subject']
 
     st.header(f'Type: {type}')
-    st.header(f'{subject}')
+    st.header(f'Topic:' {subject}')
 
     hauteur_affichage = 400  # nb of pixels
     st.markdown(f"""
